@@ -350,7 +350,7 @@ p { line-height: var(--leading-loose); }
 ============================================= */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: 1fr 400px;
   gap: var(--space-12);
   align-items: start;
   padding-block: var(--space-16) var(--space-12);
