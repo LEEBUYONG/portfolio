@@ -75,14 +75,31 @@
               </div>
             </div>
 
-            <aside class="hero__card">
+          <aside class="hero__card">
+          
+            <!-- 프로필 카드 상단: 사진 + 이름 -->
+            <div class="profile-card-top">
               <div class="profile-photo">
-                <img
-                  src="./IDPicture.jpg"
-                  alt="이부용 증명사진"
-                  loading="eager"
-                />
+                <img src="./IDPicture.jpg" alt="이부용 증명사진" loading="eager" />
               </div>
+              <div class="profile-card-top__info">
+                <h2 class="profile__name" id="profileName"></h2>
+                <p class="profile__role" id="profileRole"></p>
+              </div>
+            </div>
+          
+            <!-- 구분선 -->
+            <div class="profile-divider"></div>
+          
+            <!-- 중간: 요약 정보 -->
+            <dl class="profile__dl" id="profileDl"></dl>
+          
+            <!-- 구분선 -->
+            <div class="profile-divider"></div>
+          
+            <!-- 하단: 스킬 칩 -->
+            <div class="chip-list" id="heroChips"></div>
+           </aside>
             
               <div class="profile profile--center">
                 <div class="profile__info">
