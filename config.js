@@ -17,7 +17,7 @@ const CONFIG = {
     name:            "이부용",
     initial:         "B",
     role:            "Education Operation PM Portfolio",
-    targetRole:      "기업교육 Project Manager 지원자",
+    targetRole:      "기업교육 Project Manager",
     brandSub:        "Education Operation PM",
     lastUpdated:     "2026.05",
     footerDesc:      "APM 업무 기반 교육 운영 · HRD Project Management Portfolio",
