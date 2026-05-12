@@ -48,7 +48,7 @@ const CONFIG = {
   links: {
     /* 이력서 PDF — 깃허브 저장소에 올려둔 파일 경로 */
     resumePdf:    "./Resume_LeeBuYong.pdf",
-    resumeGithub: "",   // 예: "https://github.com/LEEBUYONG/portfolio/blob/main/Resume_LeeBuYong.pdf"
+    resumeGithub: "https://github.com/LEEBUYONG/portfolio"
 
     /* 밍글데이 실시간 트래킹 & 정산 시트 */
     mingleSheet:
@@ -202,7 +202,7 @@ const CONFIG = {
       },
       {
         company:  "서일대학교",
-        role:     "AI융합콘텐츠학과 졸업",
+        role:     "소프트웨어공학과 졸업(이공학사)",
         period:   "2021.03 ~ 2025.02",
         tasks: [
           "AI 융합 콘텐츠 분야 전공 이수",
@@ -398,7 +398,7 @@ const CONFIG = {
       { label: "프로젝트",    value: "AI 디자이너 4기 밍글데이" },
       { label: "일시",        value: "2025.04.30 (목) 19:00 ~ 21:00" },
       { label: "참여 규모",   value: "약 130명 (24개 팀)" },
-      { label: "진행 방식",   value: "ZEP 기반 온라인 행사 (해변존 1 · 2)" },
+      { label: "진행 방식",   value: "ZEP 기반 온라인 행사" },
       { label: "주요 콘텐츠", value: "OX 퀴즈 · 골든벨 · 그림 빙고 · 라디오" },
       { label: "나의 역할",   value: "그림 빙고 진행 · 가이드 제작 · 회고 문서화 · 개선안 정리" }
     ],
