@@ -1877,7 +1877,7 @@ p { line-height: var(--leading-loose); }
 
 /* ── hero 그리드 우측 카드 너비 조정 ── */
 .hero {
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 360px;
 }
 
 /* ── Resume 다운로드 바 (사진 없는 깔끔한 버전) ── */
