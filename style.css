@@ -357,7 +357,7 @@ p { line-height: var(--leading-loose); }
 }
 
 .hero__title {
-  font-size: var(--text-5xl);
+  font-size: clamp(1.75rem, 3.5vw, 3rem); // 최소 1.75rem, 화면 3.5%, 최대 3rem
   font-weight: var(--weight-black);
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -1657,8 +1657,6 @@ p { line-height: var(--leading-loose); }
     position: static;
   }
 
-  .hero__title { font-size: var(--text-4xl); }
-
   .grid--3 { grid-template-columns: repeat(2, 1fr); }
 
   .resume-skills-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1707,7 +1705,7 @@ p { line-height: var(--leading-loose); }
   .nav__toggle { display: flex; }
 
   /* 타이포 */
-  .hero__title { font-size: var(--text-3xl); }
+  .hero__title { font-size: clamp(1.5rem, 6vw, 1.875rem); }
   .page-head h1 { font-size: var(--text-3xl); }
 
   /* 그리드 */
@@ -1778,7 +1776,7 @@ p { line-height: var(--leading-loose); }
 
 /* 소형 모바일 (≤ 480px) */
 @media (max-width: 480px) {
-  .hero__title { font-size: var(--text-2xl); }
+  .hero__title { font-size: clamp(1.25rem, 5.5vw, 1.5rem); }
   .page-head h1 { font-size: var(--text-2xl); }
   .resume-section { padding: var(--space-5); }
   .resume-career { padding: var(--space-4); }
