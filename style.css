@@ -1786,23 +1786,23 @@ p { line-height: var(--leading-loose); }
 }
 
 /* =============================================
-  Profile Photo Update
+  25. Profile Photo
   -----------------------------------------------
   메인 Hero 프로필 카드 및 Resume 상단 바 증명사진 스타일
   이미지 원본 비율: 996 x 1280
 ============================================= */
 
-/* 메인 우측 프로필 카드 내 증명사진 */
+/* ── Home 프로필 카드 사진 ── */
 .profile-photo {
-  width: 180px;
-  max-width: 64%;
+  width: 140px;
   aspect-ratio: 996 / 1280;
-  margin: 0 auto var(--space-5);
+  margin: 0 auto var(--space-4);
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
   box-shadow: var(--shadow-md);
+  display: block;
 }
 
 .profile-photo img {
@@ -1813,13 +1813,10 @@ p { line-height: var(--leading-loose); }
   object-position: center top;
 }
 
-/* 사진 적용 후 프로필 정보 중앙 정렬 */
+/* 사진 아래 이름/역할 중앙 정렬 */
 .profile--center {
   justify-content: center;
   text-align: center;
-  margin-bottom: var(--space-5);
-  padding-bottom: var(--space-5);
-  border-bottom: 1px solid var(--color-border);
 }
 
 .profile--center .profile__info {
@@ -1837,100 +1834,82 @@ p { line-height: var(--leading-loose); }
   margin-top: var(--space-1);
 }
 
-/* 기존 profile 안에 avatar가 사라져도 간격이 어색하지 않게 보정 */
-.hero__card .profile.profile--center {
-  display: flex;
-  align-items: center;
-  gap: 0;
+/* ── Resume 다운로드 바 사진 ── */
+
+/* 기존 resume-download-bar 내부를 세로 스택으로 변경 */
+.resume-download-bar {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
 }
 
-/* Resume 다운로드 바 내부 프로필 묶음 */
+/* 사진 + 텍스트 가로 배치 */
 .resume-download-bar__profile {
   display: flex;
   align-items: center;
   gap: var(--space-5);
-  min-width: 0;
+  width: 100%;
 }
 
 .resume-download-bar__profile > div {
   min-width: 0;
+  flex: 1;
 }
 
-/* Resume 상단 작은 증명사진 */
+/* 작은 증명사진 */
 .resume-photo {
-  width: 76px;
+  width: 64px;
   aspect-ratio: 996 / 1280;
   border-radius: var(--radius-md);
   object-fit: cover;
   object-position: center top;
-  border: 2px solid rgba(255, 255, 255, .55);
+  border: 2px solid rgba(255, 255, 255, .6);
   background: rgba(255, 255, 255, .15);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .16);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
   flex-shrink: 0;
 }
 
-/* Resume 다운로드 바 버튼이 3개일 때 줄바꿈 안정화 */
+/* 버튼 묶음 — 가로 배치 */
 .resume-download-bar__actions {
+  display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  gap: var(--space-3);
+  width: 100%;
 }
 
-/* =============================================
-  반응형 보정
-============================================= */
+/* ── 반응형 ── */
 
 @media (max-width: 1024px) {
   .profile-photo {
-    width: 170px;
-    max-width: 48%;
-  }
-
-  .resume-download-bar {
-    align-items: flex-start;
-  }
-
-  .resume-download-bar__actions {
-    justify-content: flex-start;
+    width: 130px;
   }
 }
 
 @media (max-width: 768px) {
   .profile-photo {
-    width: 150px;
-    max-width: 52%;
-  }
-
-  .resume-download-bar__profile {
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .resume-photo {
-    width: 64px;
-  }
-
-  .resume-download-bar__actions {
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .resume-download-bar__actions .btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .profile-photo {
-    width: 132px;
-    max-width: 58%;
+    width: 120px;
   }
 
   .resume-photo {
     width: 56px;
   }
 
-  .resume-download-bar__profile {
-    gap: var(--space-4);
+  .resume-download-bar__actions .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-photo {
+    width: 110px;
+  }
+
+  .resume-photo {
+    width: 50px;
+  }
+
+  .resume-download-bar__actions .btn {
+    width: 100%;
   }
 }
