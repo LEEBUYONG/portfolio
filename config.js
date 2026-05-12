@@ -62,10 +62,6 @@ const CONFIG = {
     mingleRetro:
       "https://www.notion.so/35e76a9170d1807bb917c91be487d723?source=copy_link",
 
-    /* 밍글데이 실시간 트래킹 & 정산 시트 */
-    mingleSheet:
-      "https://docs.google.com/spreadsheets/d/1g0zg3QJi4rzuyXkdXFh2P3O4FLCRBdZgRRembR-sXJQ/edit?usp=sharing",
-
     /* 수강생 공유용 가이드 */
     studentPage:   "https://leebuyong.github.io/nbc-apm-sharing/",
     studentGithub: "https://github.com/LEEBUYONG/nbc-apm-sharing",
@@ -427,14 +423,6 @@ const CONFIG = {
         btnLabel: "페이지 보기",
         status: "배포 페이지"
       },
-      {
-        icon:   "📊",
-        label:  "트래킹 & 정산 시트",
-        desc:   "행사 진행 중 우승자 기록, 포인트·기프티콘 정산에 사용한 Google Sheet입니다.",
-        url:    "https://docs.google.com/spreadsheets/d/1g0zg3QJi4rzuyXkdXFh2P3O4FLCRBdZgRRembR-sXJQ/edit?usp=sharing",
-        btnLabel: "시트 보기",
-        status: "공개 링크"
-      }
     ],
 
     meta: [
@@ -699,14 +687,6 @@ const CONFIG = {
       url:    "https://github.com/NBC-APM/nbc-apm-manager",
       status: "GitHub",
       label:  "GitHub 보기"
-    },
-    {
-      cat:    "Mingle Day",
-      title:  "밍글데이 실시간 트래킹 및 정산 시트",
-      desc:   "행사 진행 중 우승자 기록, 포인트 및 기프티콘 정산, 콘텐츠별 결과 확인을 위해 사용한 Google Sheet입니다.",
-      url:    "https://docs.google.com/spreadsheets/d/1g0zg3QJi4rzuyXkdXFh2P3O4FLCRBdZgRRembR-sXJQ/edit?usp=sharing",
-      status: "공개 링크",
-      label:  "시트 보기"
     },
     {
       cat:    "Resume",
