@@ -48,11 +48,14 @@ const CONFIG = {
   links: {
     /* 이력서 PDF — 깃허브 저장소에 올려둔 파일 경로 */
     resumePdf:    "./Resume_LeeBuYong.pdf",
-    resumeGithub: "https://github.com/LEEBUYONG/portfolio"
+    resumeGithub: "https://github.com/LEEBUYONG/portfolio",  // ✅ 쉼표 추가 (파싱 에러 수정)
 
     /* 밍글데이 실시간 트래킹 & 정산 시트 */
     mingleSheet:
       "https://docs.google.com/spreadsheets/d/1g0zg3QJi4rzuyXkdXFh2P3O4FLCRBdZgRRembR-sXJQ/edit?usp=sharing",
+
+    /* 밍글데이 회고 문서 — Notion 또는 Google Docs 링크로 교체 */
+    mingleRetro: "",   // 예: "https://www.notion.so/밍글데이-회고-xxxxxxxx"
 
     /* 수강생 공유용 가이드 */
     studentPage:   "https://leebuyong.github.io/nbc-apm-sharing/",
@@ -68,23 +71,23 @@ const CONFIG = {
 
   /* =============================================
     TABS  —  내비게이션 탭 목록
+    ※ label은 화면에 표시되는 텍스트입니다.
+       짧게 줄이면 헤더 잘림 문제가 해결됩니다.
   ============================================= */
   tabs: [
     { id: "home",        label: "Home" },
     { id: "resume",      label: "Resume" },
-    { id: "operations",  label: "APM Operations" },
-    { id: "data",        label: "Learning Data" },
-    { id: "case",        label: "Mingle Day Case" },
-    { id: "improvement", label: "Process Improvement" },
-    { id: "guides",      label: "Web Guides" },
+    { id: "operations",  label: "Operations" },   // ✅ "APM Operations" → 축약
+    { id: "data",        label: "Data" },          // ✅ "Learning Data" → 축약
+    { id: "case",        label: "Mingle Day" },    // ✅ "Mingle Day Case" → 축약
+    { id: "improvement", label: "Improvement" },   // ✅ "Process Improvement" → 축약
+    { id: "guides",      label: "Guides" },        // ✅ "Web Guides" → 축약
     { id: "growth",      label: "Growth" },
     { id: "links",       label: "Links" }
   ],
 
   /* =============================================
     HERO ACTIONS  —  홈 버튼 목록
-    type: "tab"  → 탭 이동
-    type: "link" → 외부 링크 (linkKey: CONFIG.links 키 이름)
   ============================================= */
   heroActions: [
     { label: "이력서 보기",          type: "tab",  target: "resume",  style: "primary"   },
@@ -202,7 +205,7 @@ const CONFIG = {
       },
       {
         company:  "서일대학교",
-        role:     "소프트웨어공학과 졸업(이공학사)",
+        role:     "소프트웨어공학과 졸업 (이공학사)",
         period:   "2021.03 ~ 2025.02",
         tasks: [
           "AI 융합 콘텐츠 분야 전공 이수",
@@ -362,22 +365,22 @@ const CONFIG = {
 
   dataCases: [
     {
-      title: "출결 관리",
+      title:   "출결 관리",
       desc:    "수강생의 입실, 지각, 외출, 조퇴, 미입실 여부를 확인하고 특이사항을 기록했습니다.",
       pmPoint: "교육 운영 리스크를 조기에 확인하고 후속 조치가 가능하도록 관리했습니다."
     },
     {
-      title: "상담/이슈 관리",
+      title:   "상담/이슈 관리",
       desc:    "수강생 상담, 민원, 학습 컨디션, 팀 내 이슈를 유형별로 정리했습니다.",
       pmPoint: "학습자의 문제를 방치하지 않고 관리 가능한 운영 이슈로 전환하는 경험을 쌓았습니다."
     },
     {
-      title: "조 순회 로그",
+      title:   "조 순회 로그",
       desc:    "조별 학습 분위기와 팀 내 상황을 확인하고 로그로 기록했습니다.",
       pmPoint: "운영진과 튜터가 학습 상황을 파악할 수 있도록 정보 흐름을 정리했습니다."
     },
     {
-      title: "공지 및 일정 관리",
+      title:   "공지 및 일정 관리",
       desc:    "세션, 과제, 프로젝트, 만족도 조사, 다면평가 등 주요 일정을 안내했습니다.",
       pmPoint: "공지 누락과 일정 혼선을 줄여 학습자 경험을 안정적으로 유지했습니다."
     }
@@ -393,6 +396,42 @@ const CONFIG = {
       "목적으로 진행한 ZEP 기반 온라인 행사입니다. " +
       "4개의 해변존을 포탈로 이동하며 OX 퀴즈, 골든벨, 그림 빙고, 라디오 세션을 " +
       "2시간 동안 운영했습니다.",
+
+    /* ✅ 밍글데이 관련 문서 링크 모음 */
+    docs: [
+      {
+        icon:   "📝",
+        label:  "회고 문서",
+        desc:   "행사 후 콘텐츠별 결과, 이슈, 개선안을 정리한 회고 문서입니다.",
+        url:    "",           // 예: "https://www.notion.so/밍글데이-회고-xxxxxxxx"
+        btnLabel: "회고 보기",
+        status: "준비 중"
+      },
+      {
+        icon:   "📊",
+        label:  "트래킹 & 정산 시트",
+        desc:   "행사 진행 중 우승자 기록, 포인트·기프티콘 정산에 사용한 Google Sheet입니다.",
+        url:    "https://docs.google.com/spreadsheets/d/1g0zg3QJi4rzuyXkdXFh2P3O4FLCRBdZgRRembR-sXJQ/edit?usp=sharing",
+        btnLabel: "시트 보기",
+        status: "공개"
+      },
+      {
+        icon:   "🌐",
+        label:  "수강생 가이드 페이지",
+        desc:   "행사 당일 수강생에게 공유한 웹 가이드 페이지입니다.",
+        url:    "https://leebuyong.github.io/nbc-apm-sharing/",
+        btnLabel: "페이지 보기",
+        status: "배포 중"
+      },
+      {
+        icon:   "🛠️",
+        label:  "운영진 가이드 페이지",
+        desc:   "운영진 내부용 타임테이블·체크리스트·상품 지급 가이드 페이지입니다.",
+        url:    "https://nbc-apm.github.io/nbc-apm-manager/",
+        btnLabel: "페이지 보기",
+        status: "배포 중"
+      }
+    ],
 
     meta: [
       { label: "프로젝트",    value: "AI 디자이너 4기 밍글데이" },
@@ -604,7 +643,7 @@ const CONFIG = {
     {
       cat:    "Web Guide",
       title:  "수강생 공유용 가이드 페이지",
-      desc:   "행사 목적, 일정, 콘텐츠별 참여 방법, 제출물 안내를 수강생 관점에서 정리한 웹 가이드입니다. OX존·골든벨존·그림빙고존·라디오존 4개 섹션으로 구성했습니다.",
+      desc:   "행사 목적, 일정, 콘텐츠별 참여 방법, 제출물 안내를 수강생 관점에서 정리한 웹 가이드입니다.",
       url:    "https://leebuyong.github.io/nbc-apm-sharing/",
       status: "배포 페이지",
       label:  "페이지 보기"
@@ -620,7 +659,7 @@ const CONFIG = {
     {
       cat:    "Web Guide",
       title:  "운영진 내부용 가이드 페이지",
-      desc:   "콘텐츠별 담당자, 진행 순서, 준비물, 예외 상황 대응 내용을 운영진 관점에서 정리한 내부 운영 가이드입니다. 타임테이블, 체크리스트, 상품 지급 가이드를 포함합니다.",
+      desc:   "콘텐츠별 담당자, 진행 순서, 준비물, 예외 상황 대응 내용을 운영진 관점에서 정리한 내부 운영 가이드입니다.",
       url:    "https://nbc-apm.github.io/nbc-apm-manager/",
       status: "배포 페이지",
       label:  "페이지 보기"
@@ -640,6 +679,14 @@ const CONFIG = {
       url:    "https://docs.google.com/spreadsheets/d/1g0zg3QJi4rzuyXkdXFh2P3O4FLCRBdZgRRembR-sXJQ/edit?usp=sharing",
       status: "공개 링크",
       label:  "시트 보기"
+    },
+    {
+      cat:    "Mingle Day",
+      title:  "밍글데이 회고 문서",
+      desc:   "콘텐츠별 운영 결과, 이슈, 개선안을 정리한 회고 문서입니다. 개인정보 제거 후 공개 예정입니다.",
+      url:    "",             // ← 회고 문서 링크 완성 후 여기에 입력
+      status: "준비 중",
+      label:  "준비 중"
     },
     {
       cat:    "Resume",
