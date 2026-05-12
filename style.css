@@ -342,7 +342,7 @@ p { line-height: var(--leading-loose); }
 .page-head > p {
   font-size: var(--text-lg);
   color: var(--color-text-sub);
-  max-width: 680px;
+  max-width: 100%;
 }
 
 /* =============================================
@@ -368,7 +368,7 @@ p { line-height: var(--leading-loose); }
 .hero__desc {
   font-size: var(--text-lg);
   color: var(--color-text-sub);
-  max-width: 560px;
+  max-width: 100%;
   line-height: var(--leading-loose);
   margin-bottom: var(--space-8);
 }
