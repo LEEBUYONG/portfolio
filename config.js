@@ -4,8 +4,8 @@
  * 이 파일에서 포트폴리오의 모든 문구, 링크, 데이터를 수정할 수 있습니다.
  * HTML / script.js 는 건드리지 않아도 됩니다.
  *
- * ⚠️  개인정보 및 내부 운영 정보가 포함된 링크는
- *     공개 전 반드시 비식별화 여부를 확인해주세요.
+ * ⚠️ 개인정보 및 내부 운영 정보가 포함된 링크는
+ *    공개 전 반드시 비식별화 여부를 확인해주세요.
  */
 
 const CONFIG = {
@@ -46,16 +46,25 @@ const CONFIG = {
     LINKS  —  외부 링크 모음
   ============================================= */
   links: {
-    /* 이력서 PDF — 깃허브 저장소에 올려둔 파일 경로 */
+    /* 이력서 PDF */
     resumePdf:    "./Resume_LeeBuYong.pdf",
-    resumeGithub: "https://github.com/LEEBUYONG/portfolio",  // ✅ 쉼표 추가 (파싱 에러 수정)
+    resumeGithub: "https://github.com/LEEBUYONG/portfolio",
+
+    /* Notion 포트폴리오 허브 */
+    notion:
+      "https://www.notion.so/LeeBuYong-Portfolio-2b876a9170d181999a0adbb6d7cf7d39?source=copy_link",
+
+    /* APM 업무 정리 Notion */
+    apmNotion:
+      "https://www.notion.so/APM-35e76a9170d180e9af2ed1e904b39f53?source=copy_link",
+
+    /* 밍글데이 회고 Notion */
+    mingleRetro:
+      "https://www.notion.so/35e76a9170d1807bb917c91be487d723?source=copy_link",
 
     /* 밍글데이 실시간 트래킹 & 정산 시트 */
     mingleSheet:
       "https://docs.google.com/spreadsheets/d/1g0zg3QJi4rzuyXkdXFh2P3O4FLCRBdZgRRembR-sXJQ/edit?usp=sharing",
-
-    /* 밍글데이 회고 문서 — Notion 또는 Google Docs 링크로 교체 */
-    mingleRetro: "",   // 예: "https://www.notion.so/밍글데이-회고-xxxxxxxx"
 
     /* 수강생 공유용 가이드 */
     studentPage:   "https://leebuyong.github.io/nbc-apm-sharing/",
@@ -63,25 +72,20 @@ const CONFIG = {
 
     /* 운영진 내부용 가이드 */
     managerPage:   "https://nbc-apm.github.io/nbc-apm-manager/",
-    managerGithub: "https://github.com/NBC-APM/nbc-apm-manager",
-
-    /* Notion 포트폴리오 — 재구성 후 연결 예정 */
-    notion: ""
+    managerGithub: "https://github.com/NBC-APM/nbc-apm-manager"
   },
 
   /* =============================================
     TABS  —  내비게이션 탭 목록
-    ※ label은 화면에 표시되는 텍스트입니다.
-       짧게 줄이면 헤더 잘림 문제가 해결됩니다.
   ============================================= */
   tabs: [
     { id: "home",        label: "Home" },
     { id: "resume",      label: "Resume" },
-    { id: "operations",  label: "Operations" },   // ✅ "APM Operations" → 축약
-    { id: "data",        label: "Data" },          // ✅ "Learning Data" → 축약
-    { id: "case",        label: "Mingle Day" },    // ✅ "Mingle Day Case" → 축약
-    { id: "improvement", label: "Improvement" },   // ✅ "Process Improvement" → 축약
-    { id: "guides",      label: "Guides" },        // ✅ "Web Guides" → 축약
+    { id: "operations",  label: "Operations" },
+    { id: "data",        label: "Data" },
+    { id: "case",        label: "Mingle Day" },
+    { id: "improvement", label: "Improvement" },
+    { id: "guides",      label: "Guides" },
     { id: "growth",      label: "Growth" },
     { id: "links",       label: "Links" }
   ],
@@ -90,9 +94,10 @@ const CONFIG = {
     HERO ACTIONS  —  홈 버튼 목록
   ============================================= */
   heroActions: [
-    { label: "이력서 보기",          type: "tab",  target: "resume",  style: "primary"   },
-    { label: "밍글데이 Case 보기",   type: "tab",  target: "case",    style: "secondary" },
-    { label: "가이드 웹페이지 보기", type: "tab",  target: "guides",  style: "secondary" }
+    { label: "이력서 보기",        type: "tab",  target: "resume",     style: "primary" },
+    { label: "APM 업무 보기",      type: "tab",  target: "operations", style: "secondary" },
+    { label: "밍글데이 Case 보기", type: "tab",  target: "case",       style: "secondary" },
+    { label: "Notion 포트폴리오",  type: "link", linkKey: "notion",    style: "secondary" }
   ],
 
   /* =============================================
@@ -111,7 +116,7 @@ const CONFIG = {
   highlights: [
     {
       icon: "📋",
-      title: "교육 운영 관리",
+      title: "교육 운영 프로세스 관리",
       desc:
         "출결, 공지, 상담, 이슈, 일정, 조 순회 로그 등 교육 과정의 " +
         "세부 운영 요소를 관리했습니다."
@@ -125,7 +130,7 @@ const CONFIG = {
     },
     {
       icon: "🧭",
-      title: "가이드 및 문서화",
+      title: "운영 가이드 및 회고 문서화",
       desc:
         "수강생용·운영진용 웹 가이드를 분리 제작하고, 행사 회고를 " +
         "다음 운영에 활용 가능한 문서로 정리했습니다."
@@ -138,14 +143,14 @@ const CONFIG = {
   resume: {
 
     targetRole: {
-      title:    "기업교육 Project Manager (인턴)",
-      keywords: ["교육 운영 관리", "프로젝트 리딩", "데이터 기반 이슈 대응", "프로세스 최적화"]
+      title:    "기업교육 Project Manager",
+      keywords: ["교육 운영 관리", "프로젝트 리딩", "데이터 기반 이슈 대응", "프로세스 개선"]
     },
 
     summary:
       "교육 운영 현장에서 학습자 관리, 출결·상담·공지·이슈 대응을 수행하며 교육 프로젝트 " +
       "운영의 기본기를 다졌습니다. SW/AI 교육 수료 및 프로젝트 리딩 경험을 바탕으로, " +
-      "학습자의 관점과 운영자의 효율성을 동시에 고려합니다. 반복 업무를 Notion·구글시트로 " +
+      "학습자의 관점과 운영자의 효율성을 동시에 고려합니다. 반복 업무를 Notion·Google Sheets로 " +
       "구조화하여 운영 안정성을 높이는 데 강점이 있으며, 향후 인재개발 전문성을 갖춘 " +
       "기업교육 PM으로 성장하고자 합니다.",
 
@@ -159,8 +164,8 @@ const CONFIG = {
           "조 순회 및 이슈 유형별 데이터화로 운영 효율성 증대",
           "반복 업무 체크리스트 및 운영 매뉴얼 제작으로 업무 누락 방지",
           "세션, 과제, 프로젝트, 만족도 조사, 다면평가 등 주요 교육 일정 공지 운영",
-          "튜터 인계 및 매칭, 팀 편성, 발표회, 밍글데이 등 교육 운영 이벤트 지원",
-          "Notion, Google Sheets, Google Drive, Zoom, 백오피스 등 운영 도구 활용",
+          "튜터 인계, 팀 편성, 발표회, 밍글데이 등 교육 운영 이벤트 지원",
+          "Notion, Google Sheets, Google Drive, Zoom, Slack, 백오피스 등 운영 도구 활용",
           "수강생용·운영진용 행사 가이드 웹페이지 제작 및 배포"
         ]
       },
@@ -186,7 +191,7 @@ const CONFIG = {
           "생활밀착형 앱 서비스 출시 프로젝트 팀 리더로 참여",
           "MVP 범위 설정, 역할 분담, 일정 관리, 진행 상황 확인, 최종 발표 주도",
           "일정 지연 리스크 파악 및 GitHub 커밋 히스토리 기반 업무 재분배",
-          "앱스토어 배포 및 유지보수 완료",
+          "앱스토어 배포 및 유지보수 경험",
           "GitHub 기반 데일리 스크럼 운영으로 프로젝트 투명성 확보"
         ]
       }
@@ -205,11 +210,11 @@ const CONFIG = {
       },
       {
         company:  "서일대학교",
-        role:     "소프트웨어공학과 졸업 (이공학사)",
-        period:   "2021.03 ~ 2024.02",
+        role:     "소프트웨어공학과 졸업",
+        period:   "2020.03 ~ 2024.02",
         tasks: [
-          "소프트웨어공학과 분야 전공 이수",
-          "전문학사(전공심화) 취득"
+          "소프트웨어공학 전공 이수",
+          "2020.03 입학, 2024.02 졸업"
         ]
       }
     ],
@@ -390,30 +395,21 @@ const CONFIG = {
     MINGLE DAY  —  밍글데이 케이스 스터디
   ============================================= */
   mingleDay: {
-    title:   "AI 디자이너 4기 밍글데이 운영 프로젝트",
+    title:   "AI 디자이너 4기 밍글데이 온라인 행사 운영",
     summary:
       "수강생 간 아이스브레이킹, 팀 빌딩, 학습 피로 완화, 운영진-수강생 간 라포 형성을 " +
       "목적으로 진행한 ZEP 기반 온라인 행사입니다. " +
       "4개의 해변존을 포탈로 이동하며 OX 퀴즈, 골든벨, 그림 빙고, 라디오 세션을 " +
       "2시간 동안 운영했습니다.",
 
-    /* ✅ 밍글데이 관련 문서 링크 모음 */
     docs: [
       {
         icon:   "📝",
         label:  "회고 문서",
-        desc:   "행사 후 콘텐츠별 결과, 이슈, 개선안을 정리한 회고 문서입니다.",
-        url:    "",           // 예: "https://www.notion.so/밍글데이-회고-xxxxxxxx"
+        desc:   "행사 후 콘텐츠별 결과, 이슈, 개선안을 정리한 Notion 회고 문서입니다.",
+        url:    "https://www.notion.so/35e76a9170d1807bb917c91be487d723?source=copy_link",
         btnLabel: "회고 보기",
-        status: "준비 중"
-      },
-      {
-        icon:   "📊",
-        label:  "트래킹 & 정산 시트",
-        desc:   "행사 진행 중 우승자 기록, 포인트·기프티콘 정산에 사용한 Google Sheet입니다.",
-        url:    "https://docs.google.com/spreadsheets/d/1g0zg3QJi4rzuyXkdXFh2P3O4FLCRBdZgRRembR-sXJQ/edit?usp=sharing",
-        btnLabel: "시트 보기",
-        status: "공개"
+        status: "공개 문서"
       },
       {
         icon:   "🌐",
@@ -421,7 +417,7 @@ const CONFIG = {
         desc:   "행사 당일 수강생에게 공유한 웹 가이드 페이지입니다.",
         url:    "https://leebuyong.github.io/nbc-apm-sharing/",
         btnLabel: "페이지 보기",
-        status: "배포 중"
+        status: "배포 페이지"
       },
       {
         icon:   "🛠️",
@@ -429,13 +425,21 @@ const CONFIG = {
         desc:   "운영진 내부용 타임테이블·체크리스트·상품 지급 가이드 페이지입니다.",
         url:    "https://nbc-apm.github.io/nbc-apm-manager/",
         btnLabel: "페이지 보기",
-        status: "배포 중"
+        status: "배포 페이지"
+      },
+      {
+        icon:   "📊",
+        label:  "트래킹 & 정산 시트",
+        desc:   "행사 진행 중 우승자 기록, 포인트·기프티콘 정산에 사용한 Google Sheet입니다.",
+        url:    "https://docs.google.com/spreadsheets/d/1g0zg3QJi4rzuyXkdXFh2P3O4FLCRBdZgRRembR-sXJQ/edit?usp=sharing",
+        btnLabel: "시트 보기",
+        status: "공개 링크"
       }
     ],
 
     meta: [
       { label: "프로젝트",    value: "AI 디자이너 4기 밍글데이" },
-      { label: "일시",        value: "2025.04.30 (목) 19:00 ~ 21:00" },
+      { label: "일시",        value: "2026.04.30 (목) 19:00 ~ 21:00" },
       { label: "참여 규모",   value: "약 130명 (24개 팀)" },
       { label: "진행 방식",   value: "ZEP 기반 온라인 행사" },
       { label: "주요 콘텐츠", value: "OX 퀴즈 · 골든벨 · 그림 빙고 · 라디오" },
@@ -476,31 +480,31 @@ const CONFIG = {
     programs: [
       {
         title:       "OX 퀴즈",
-        purpose:     "튜터/매니저 TMI 기반 아이스브레이킹 (19:10 ~ 19:40)",
+        purpose:     "튜터/매니저 TMI 기반 아이스브레이킹",
         result:      "초반 분위기 형성에 효과적이었고 참여 반응이 좋았습니다. 튜터·매니저 TMI를 문제로 활용해 자연스러운 친밀감 형성에 기여했습니다.",
         issue:       "우승자가 예상보다 빠르게 결정되어 추가 문제 준비와 예외 상황 기준이 필요했습니다. 현장에서 문제를 수기로 수정하며 시간이 소요되었습니다.",
-        improvement: "라운드별 문제 파일 분리(OX_1차.csv, OX_2차.csv), 예비 문제 확보, 전원 탈락·동시 우승 기준 사전 마련이 필요합니다."
+        improvement: "라운드별 문제 파일 분리, 예비 문제 확보, 전원 탈락·동시 우승 기준 사전 마련이 필요합니다."
       },
       {
         title:       "골든벨",
-        purpose:     "운영 규칙, 디자인, AI 기초 지식 복습 (19:40 ~ 20:00)",
+        purpose:     "운영 규칙, 디자인, AI 기초 지식 복습",
         result:      "학습 내용과 운영 기준을 재미있게 복습할 수 있었습니다. 운영 관련 문제에서 대거 탈락이 발생해 수강생들이 운영 가이드를 잘 확인하지 않는다는 점을 파악했습니다.",
-        issue:       "운영 관련 문제에서 40명 동시 탈락이 발생했고, 2차 진행 시 전원 탈락 및 문제 세팅 지연이 발생했습니다.",
-        improvement: "운영 문제 난이도 조정, 정답 입력 기준 사전 안내(숫자만 입력, 띄어쓰기 무관 등), 추가 라운드 파일 준비가 필요합니다."
+        issue:       "운영 관련 문제에서 다수 인원 동시 탈락이 발생했고, 추가 진행 시 전원 탈락 및 문제 세팅 지연이 발생했습니다.",
+        improvement: "운영 문제 난이도 조정, 정답 입력 기준 사전 안내, 추가 라운드 파일 준비가 필요합니다."
       },
       {
         title:       "그림 빙고",
-        purpose:     "팀별 협업 및 디자이너 트랙 특성에 맞는 창의적 참여 유도 (20:00 ~ 20:30)",
+        purpose:     "팀별 협업 및 디자이너 트랙 특성에 맞는 창의적 참여 유도",
         result:      "팀별 그림 결과물이 행사 이후 피그마 아카이브 자료로도 활용 가능했고, 히든상 운영으로 끝까지 참여 동기를 유지했습니다.",
-        issue:       "5×5 빙고판과 24개 팀 전체 진행으로 예상 30분 → 실제 50분 초과. 제한 시간 내 3빙고가 나오지 않아 수상 기준이 모호해졌습니다.",
-        improvement: "3×3 또는 4×4 빙고판 축소, 8팀씩 3개 조 분리 진행, 대체 수상 기준(체크 칸 수·빙고 근접도) 사전 마련이 필요합니다."
+        issue:       "5×5 빙고판과 24개 팀 전체 진행으로 예상 시간보다 오래 소요되었습니다. 제한 시간 내 3빙고가 나오지 않아 수상 기준이 모호해졌습니다.",
+        improvement: "3×3 또는 4×4 빙고판 축소, 8팀씩 3개 조 분리 진행, 대체 수상 기준 사전 마련이 필요합니다."
       },
       {
         title:       "라디오 / 사연 콘텐츠",
-        purpose:     "사연 공유를 통한 감성적 마무리 (20:30 ~ 21:00)",
-        result:      "23개 사연 접수, 6개 소개. 참여자 간 공감과 긍정적인 반응이 형성되었고, 구글폼 투표 후 피그마에 결과를 투명하게 공개했습니다.",
+        purpose:     "사연 공유를 통한 감성적 마무리",
+        result:      "다수의 사연이 접수되었고, 참여자 간 공감과 긍정적인 반응이 형성되었습니다. 구글폼 투표 후 피그마에 결과를 공개해 투명성을 확보했습니다.",
         issue:       "시간 부족으로 일부 사연을 소개하지 못했고, ZEP 화면 공유 시 음악 송출 이슈가 발생했습니다.",
-        improvement: "사연 길이 제한(100자~800자), 소개 기준 사전 마련, 5분/10분/15분 축약안 준비, 음향 사전 테스트가 필요합니다."
+        improvement: "사연 길이 제한, 소개 기준 사전 마련, 축약안 준비, 음향 사전 테스트가 필요합니다."
       }
     ],
 
@@ -530,8 +534,8 @@ const CONFIG = {
         "팀 노션에 설문 완료 체크표 생성",
         "팀원 각자 설문 완료 후 체크",
         "팀장 확인 후 매니저에게 노션 URL 전달",
-        "운영팀 노션 확인 (5분 이내)",
-        "포인트 지급 및 완료 안내 (보고 후 30분 이내)"
+        "운영팀 노션 확인",
+        "포인트 지급 및 완료 안내"
       ]
     },
 
@@ -548,7 +552,7 @@ const CONFIG = {
         title: "액션아이템 관리",
         desc:
           "회의 후 해야 할 일을 담당자·상태 중심으로 정리해 " +
-          "운영진이 다음 행동을 빠르게 확인할 수 있도록 했습니다."
+          "후속 조치가 누락되지 않도록 관리했습니다."
       },
       {
         icon:  "💡",
@@ -568,7 +572,7 @@ const CONFIG = {
 
     policyDiscussions: [
       "TIL 제출 건당 포인트 지급 및 월 단위 일괄 정산 방향 검토",
-      "디자인 감각 훈련(디감훈)을 TIL로 통합 제출하는 방안 검토",
+      "디자인 감각 훈련을 TIL로 통합 제출하는 방안 검토",
       "우수 디감훈 선정 방식과 우수 TIL 선정 필요성 논의",
       "설문조사 완료 여부를 팀 단위로 확인하고 보상하는 구조 제안",
       "포인트 지급 현황을 확인할 수 있는 트래킹 시트 신규 제작 필요성 정리",
@@ -641,6 +645,30 @@ const CONFIG = {
   ============================================= */
   resources: [
     {
+      cat:    "Notion",
+      title:  "세미 포트폴리오 Notion",
+      desc:   "이력서, APM 업무 정리, 밍글데이 회고 등 주요 자료를 연결한 Notion 기반 포트폴리오 허브입니다.",
+      url:    "https://www.notion.so/LeeBuYong-Portfolio-2b876a9170d181999a0adbb6d7cf7d39?source=copy_link",
+      status: "포트폴리오 허브",
+      label:  "Notion 보기"
+    },
+    {
+      cat:    "Notion",
+      title:  "APM 업무 정리 Notion",
+      desc:   "출결, 공지, 조순회, 상담/이슈 관리, R&R 등 APM 업무 구조를 비식별화하여 정리한 문서입니다.",
+      url:    "https://www.notion.so/APM-35e76a9170d180e9af2ed1e904b39f53?source=copy_link",
+      status: "공개 문서",
+      label:  "Notion 보기"
+    },
+    {
+      cat:    "Mingle Day",
+      title:  "밍글데이 운영 회고 Notion",
+      desc:   "콘텐츠별 운영 결과, 이슈, 개선안, PM 관점 회고를 정리한 Notion 문서입니다.",
+      url:    "https://www.notion.so/35e76a9170d1807bb917c91be487d723?source=copy_link",
+      status: "공개 문서",
+      label:  "회고 보기"
+    },
+    {
       cat:    "Web Guide",
       title:  "수강생 공유용 가이드 페이지",
       desc:   "행사 목적, 일정, 콘텐츠별 참여 방법, 제출물 안내를 수강생 관점에서 정리한 웹 가이드입니다.",
@@ -681,14 +709,6 @@ const CONFIG = {
       label:  "시트 보기"
     },
     {
-      cat:    "Mingle Day",
-      title:  "밍글데이 회고 문서",
-      desc:   "콘텐츠별 운영 결과, 이슈, 개선안을 정리한 회고 문서입니다. 개인정보 제거 후 공개 예정입니다.",
-      url:    "",             // ← 회고 문서 링크 완성 후 여기에 입력
-      status: "준비 중",
-      label:  "준비 중"
-    },
-    {
       cat:    "Resume",
       title:  "이력서 PDF",
       desc:   "기업교육 Project Manager 직무 지원을 위한 이력서입니다. PDF로 다운로드할 수 있습니다.",
@@ -698,12 +718,12 @@ const CONFIG = {
       download: "Resume_LeeBuYong.pdf"
     },
     {
-      cat:    "Notion",
-      title:  "APM 업무 정리 재구성 페이지",
-      desc:   "개인정보 및 내부 정보를 제거한 뒤, 실제 운영 구조를 기반으로 새로 재구성할 예정입니다.",
-      url:    "",
-      status: "준비 중",
-      label:  "준비 중"
+      cat:    "GitHub",
+      title:  "포트폴리오 GitHub",
+      desc:   "현재 포트폴리오 웹사이트의 소스 코드 저장소입니다.",
+      url:    "https://github.com/LEEBUYONG/portfolio",
+      status: "GitHub",
+      label:  "GitHub 보기"
     }
   ]
 
