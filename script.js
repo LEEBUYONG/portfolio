@@ -552,12 +552,24 @@ function renderMingleDay() {
     });
   }
 
-  // 트래킹 시트 링크
-  const sheetLink = qs("#mingleSheetLink");
-  if (sheetLink && isUrl(L.mingleSheet)) {
-    sheetLink.href = L.mingleSheet;
-    sheetLink.target = "_blank";
-    sheetLink.rel = "noopener noreferrer";
+  // 밍글데이 문서 링크 카드
+  const docsWrap = qs("#mingleDocsGrid");
+  if (docsWrap && md.docs) {
+    docsWrap.innerHTML = "";
+    md.docs.forEach((doc) => {
+      const disabled = !isUrl(doc.url);
+      const card = document.createElement("div");
+      card.className = `resource-card${disabled ? " resource-card--disabled" : ""}`;
+      card.innerHTML = `
+        <div class="resource-card__body">
+          <span class="resource-card__cat">${esc(doc.label)}</span>
+          <h3 class="resource-card__title">${esc(doc.icon)} ${esc(doc.desc)}</h3>
+          <span class="resource-card__status">${esc(doc.status)}</span>
+        </div>
+      `;
+      card.appendChild(makeLink(doc.btnLabel, doc.url, disabled ? "secondary" : "primary", disabled));
+      docsWrap.appendChild(card);
+    });
   }
 }
 
