@@ -26,6 +26,7 @@
   22. 푸터
   23. 유틸 클래스
   24. 반응형 (미디어 쿼리)
+  25. Profile Photo & Card Redesign
 ============================================= */
 
 /* =============================================
@@ -1789,37 +1790,40 @@ p { line-height: var(--leading-loose); }
   25. Profile Photo & Card Redesign
 ============================================= */
 
-/* ── 홈 카드 전체 ── */
+/* ── hero__card sticky 제거 + 크기 확대 ── */
 .hero__card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   box-shadow: var(--shadow-md);
-  position: sticky;
-  top: calc(var(--header-h) + var(--space-6));
+  position: static !important;   /* sticky 완전 제거 */
   display: flex;
   flex-direction: column;
   gap: 0;
+  min-width: 300px;
 }
 
-/* ── 상단: 사진 + 이름 가로 배치 ── */
+/* ── 상단: 사진(위) + 이름(아래) 세로 중앙 배치 ── */
 .profile-card-top {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-3);
   padding-bottom: var(--space-5);
+  text-align: center;
 }
 
+/* ── 사진 크기 키우기 ── */
 .profile-photo {
-  width: 72px;
+  width: 110px;
   aspect-ratio: 996 / 1280;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   flex-shrink: 0;
   background: var(--color-surface-2);
   border: 2px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .profile-photo img {
@@ -1833,12 +1837,12 @@ p { line-height: var(--leading-loose); }
 .profile-card-top__info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-1);
-  min-width: 0;
 }
 
 .profile-card-top__info .profile__name {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: var(--weight-bold);
   color: var(--color-text);
   line-height: 1.2;
@@ -1863,17 +1867,24 @@ p { line-height: var(--leading-loose); }
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  margin-bottom: 0;
 }
 
-/* 기존 .profile 클래스 충돌 방지 — hero__card 안에서는 숨김 */
+/* 기존 .profile 클래스 hero__card 안에서 숨김 */
 .hero__card > .profile {
   display: none;
 }
 
-/* ── Resume 다운로드 바 원복 (사진 없는 버전) ── */
+/* ── hero 그리드 우측 카드 너비 조정 ── */
+.hero {
+  grid-template-columns: 1fr 320px;
+}
+
+/* ── Resume 다운로드 바 (사진 없는 깔끔한 버전) ── */
 .resume-download-bar {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
   justify-content: space-between;
   gap: var(--space-6);
   padding: var(--space-6) var(--space-8);
@@ -1882,7 +1893,6 @@ p { line-height: var(--leading-loose); }
   color: #fff;
   margin-bottom: var(--space-10);
   box-shadow: 0 8px 24px rgba(91,94,244,.3);
-  flex-direction: row;
 }
 
 .resume-download-bar strong {
@@ -1930,19 +1940,38 @@ p { line-height: var(--leading-loose); }
 
 /* ── 반응형 ── */
 @media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__card {
+    min-width: unset;
+    position: static !important;
+  }
+
+  .profile-card-top {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+  }
+
+  .profile-card-top__info {
+    align-items: flex-start;
+  }
+
   .profile-photo {
-    width: 66px;
+    width: 80px;
   }
 }
 
 @media (max-width: 768px) {
   .profile-photo {
-    width: 60px;
+    width: 70px;
   }
 
   .resume-download-bar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column !important;
+    align-items: flex-start !important;
     gap: var(--space-4);
   }
 
@@ -1959,7 +1988,7 @@ p { line-height: var(--leading-loose); }
 
 @media (max-width: 480px) {
   .profile-photo {
-    width: 56px;
+    width: 60px;
   }
 
   .resume-download-bar__actions .btn {
