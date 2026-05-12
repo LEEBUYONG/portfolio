@@ -125,7 +125,7 @@ function renderProfile() {
   setText("#heroDesc",     p.heroDesc);
 
   // 프로필 카드
-  setText("#profileAvatar", p.initial);
+  // setText("#profileAvatar", p.initial); 이력서 증명사진 이미지 삭제로 인한 주석처리
   setText("#profileName",   p.name);
   setText("#profileRole",   p.targetRole);
 
