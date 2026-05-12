@@ -560,13 +560,14 @@ function renderMingleDay() {
       const disabled = !isUrl(doc.url);
       const card = document.createElement("div");
       card.className = `resource-card${disabled ? " resource-card--disabled" : ""}`;
-      card.innerHTML = `
-        <div class="resource-card__body">
-          <span class="resource-card__cat">${esc(doc.label)}</span>
-          <h3 class="resource-card__title">${esc(doc.icon)} ${esc(doc.desc)}</h3>
-          <span class="resource-card__status">${esc(doc.status)}</span>
-        </div>
-      `;
+        card.innerHTML = `
+          <div class="resource-card__body">
+            <span class="resource-card__cat">${esc(doc.label)}</span>
+            <h3 class="resource-card__title">${esc(doc.icon)} ${esc(doc.label)}</h3>
+            <p class="resource-card__desc">${esc(doc.desc)}</p>
+            <span class="resource-card__status">${esc(doc.status)}</span>
+          </div>
+        `;
       card.appendChild(makeLink(doc.btnLabel, doc.url, disabled ? "secondary" : "primary", disabled));
       docsWrap.appendChild(card);
     });
