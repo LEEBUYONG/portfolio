@@ -1,7 +1,7 @@
 # 이부용 | Education Operation PM Portfolio
 
 > APM 업무 기반 교육 운영 · HRD Project Management Portfolio  
-> **기업교육 Project Manager** 직무 지원을 위해 제작한 SPA 포트폴리오 웹사이트입니다.
+> **교육 Project Manager** 직무 지원을 위해 제작한 SPA 포트폴리오 웹사이트입니다.
 
 🔗 **배포 주소** : `https://leebuyong.github.io/portfolio/`
 
@@ -10,7 +10,7 @@
 ## 📌 포트폴리오 소개
 
 스파르타코딩클럽 APM(학습관리매니저) 업무를 수행하며 쌓은 교육 운영 경험을  
-기업교육 Project Manager 관점으로 정리한 포트폴리오입니다.
+교육 Project Manager 관점으로 정리한 포트폴리오입니다.
 
 출결 관리, 상담/이슈 대응, 공지 운영, 행사 운영, 가이드 제작, 프로세스 개선 등  
 교육 과정의 세부 운영 요소를 어떻게 관리하고 구조화했는지를 담았습니다.
@@ -32,7 +32,7 @@
 | **Mingle Day Case** | AI 디자이너 4기 밍글데이 운영 케이스 스터디 |
 | **Process Improvement** | 설문 포인트 운영안, 회의록 정리, 정책 논의 |
 | **Web Guides** | 수강생용 · 운영진용 가이드 웹페이지 제작 |
-| **Growth** | 기업교육 PM으로의 성장 방향 |
+| **Growth** | PM으로의 성장 방향 |
 | **Links** | 산출물 및 외부 링크 모음 |
 
 ---
@@ -153,8 +153,7 @@ https://{GitHub 아이디}.github.io/{리포지토리명}/
 ## 👤 만든 사람
 
 **이부용**  
-기업교육 Project Manager 지원자  
-APM 업무 기반 교육 운영 · HRD Project Management
+dqd001@naver.com
 
 ---
 
