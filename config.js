@@ -17,7 +17,7 @@ const CONFIG = {
     name:            "이부용",
     initial:         "B",
     role:            "Education Operation PM Portfolio",
-    targetRole:      "기업교육 Project Manager",
+    targetRole:      "교육 PM / HRD 담당자",
     brandSub:        "Education Operation PM",
     lastUpdated:     "2026.05",
     footerDesc:      "APM 업무 기반 교육 운영 · HRD Project Management Portfolio",
@@ -35,7 +35,7 @@ const CONFIG = {
       "다음 운영에 재사용 가능한 문서로 남겼습니다.",
 
     summary: [
-      { label: "지원 방향",  value: "기업교육 Project Manager" },
+      { label: "지원 방향",  value: "교육 PM / HRD 담당자" },
       { label: "핵심 경험",  value: "APM · 교육 운영 · 행사 운영" },
       { label: "주요 도구",  value: "Notion · Google Sheets · Web Guide" },
       { label: "강점",       value: "문서화 · 데이터 정리 · 프로세스 개선" }
@@ -46,27 +46,16 @@ const CONFIG = {
     LINKS  —  외부 링크 모음
   ============================================= */
   links: {
-    /* 이력서 PDF */
     resumePdf:    "./Resume_LeeBuYong.pdf",
     resumeGithub: "https://github.com/LEEBUYONG/portfolio",
-
-    /* Notion 포트폴리오 허브 */
     notion:
       "https://www.notion.so/LeeBuYong-Portfolio-2b876a9170d181999a0adbb6d7cf7d39?source=copy_link",
-
-    /* APM 업무 정리 Notion */
     apmNotion:
       "https://www.notion.so/APM-35e76a9170d180e9af2ed1e904b39f53?source=copy_link",
-
-    /* 밍글데이 회고 Notion */
     mingleRetro:
       "https://www.notion.so/35e76a9170d1807bb917c91be487d723?source=copy_link",
-
-    /* 수강생 공유용 가이드 */
     studentPage:   "https://leebuyong.github.io/nbc-apm-sharing/",
     studentGithub: "https://github.com/LEEBUYONG/nbc-apm-sharing",
-
-    /* 운영진 내부용 가이드 */
     managerPage:   "https://nbc-apm.github.io/nbc-apm-manager/",
     managerGithub: "https://github.com/NBC-APM/nbc-apm-manager"
   },
@@ -137,7 +126,7 @@ const CONFIG = {
   resume: {
 
     targetRole: {
-      title:    "기업교육 Project Manager",
+      title:    "교육 PM / HRD 담당자",
       keywords: ["교육 운영 관리", "프로젝트 리딩", "데이터 기반 이슈 대응", "프로세스 개선"]
     },
 
@@ -145,8 +134,8 @@ const CONFIG = {
       "교육 운영 현장에서 학습자 관리, 출결·상담·공지·이슈 대응을 수행하며 교육 프로젝트 " +
       "운영의 기본기를 다졌습니다. SW/AI 교육 수료 및 프로젝트 리딩 경험을 바탕으로, " +
       "학습자의 관점과 운영자의 효율성을 동시에 고려합니다. 반복 업무를 Notion·Google Sheets로 " +
-      "구조화하여 운영 안정성을 높이는 데 강점이 있으며, 향후 인재개발 전문성을 갖춘 " +
-      "기업교육 PM으로 성장하고자 합니다.",
+      "구조화하여 운영 안정성을 높이는 데 강점이 있으며, 향후 HRD 전문성을 갖춘 " +
+      "교육 PM으로 성장하고자 합니다.",
 
     careers: [
       {
@@ -398,29 +387,29 @@ const CONFIG = {
 
     docs: [
       {
-        icon:   "📝",
-        label:  "회고 문서",
-        desc:   "행사 후 콘텐츠별 결과, 이슈, 개선안을 정리한 Notion 회고 문서입니다.",
-        url:    "https://www.notion.so/35e76a9170d1807bb917c91be487d723?source=copy_link",
+        icon:     "📝",
+        label:    "회고 문서",
+        desc:     "행사 후 콘텐츠별 결과, 이슈, 개선안을 정리한 Notion 회고 문서입니다.",
+        url:      "https://www.notion.so/35e76a9170d1807bb917c91be487d723?source=copy_link",
         btnLabel: "회고 보기",
-        status: "공개 문서"
+        status:   "공개 문서"
       },
       {
-        icon:   "🌐",
-        label:  "수강생 가이드 페이지",
-        desc:   "행사 당일 수강생에게 공유한 웹 가이드 페이지입니다.",
-        url:    "https://leebuyong.github.io/nbc-apm-sharing/",
+        icon:     "🌐",
+        label:    "수강생 가이드 페이지",
+        desc:     "행사 당일 수강생에게 공유한 웹 가이드 페이지입니다.",
+        url:      "https://leebuyong.github.io/nbc-apm-sharing/",
         btnLabel: "페이지 보기",
-        status: "배포 페이지"
+        status:   "배포 페이지"
       },
       {
-        icon:   "🛠️",
-        label:  "운영진 가이드 페이지",
-        desc:   "운영진 내부용 타임테이블·체크리스트·상품 지급 가이드 페이지입니다.",
-        url:    "https://nbc-apm.github.io/nbc-apm-manager/",
+        icon:     "🛠️",
+        label:    "운영진 가이드 페이지",
+        desc:     "운영진 내부용 타임테이블·체크리스트·상품 지급 가이드 페이지입니다.",
+        url:      "https://nbc-apm.github.io/nbc-apm-manager/",
         btnLabel: "페이지 보기",
-        status: "배포 페이지"
-      },
+        status:   "배포 페이지"
+      }
     ],
 
     meta: [
@@ -588,7 +577,7 @@ const CONFIG = {
       "학습자가 끝까지 몰입하고 성장하도록 돕는 연결된 운영 요소였습니다.",
 
     pmFit:
-      "기업교육 PM은 고객사의 문제를 교육 솔루션으로 구체화하고, " +
+      "교육 PM / HRD 담당자는 조직과 학습자의 문제를 교육 솔루션으로 구체화하고, " +
       "교육 과정에서 발생하는 다양한 이해관계자의 요구를 조율하며, " +
       "교육 결과를 데이터와 피드백으로 개선하는 역할이라고 이해하고 있습니다. " +
       "저는 APM 업무를 통해 교육 운영의 세부를 경험했고, " +
@@ -613,7 +602,7 @@ const CONFIG = {
         icon:  "🤖",
         title: "AI / DX 교육 이해 확대",
         desc:
-          "AI와 DX 교육 콘텐츠 및 기업교육 시장에 대한 이해를 넓혀 " +
+          "AI와 DX 교육 콘텐츠 및 교육 시장에 대한 이해를 넓혀 " +
           "기술 교육 프로젝트를 더 안정적으로 운영하고 싶습니다."
       },
       {
@@ -689,7 +678,7 @@ const CONFIG = {
     {
       cat:    "Resume",
       title:  "이력서 PDF",
-      desc:   "기업교육 Project Manager 직무 지원을 위한 이력서입니다. PDF로 다운로드할 수 있습니다.",
+      desc:   "교육 PM / HRD 담당자 직무 지원을 위한 이력서입니다. PDF로 다운로드할 수 있습니다.",
       url:    "./Resume_LeeBuYong.pdf",
       status: "PDF 다운로드",
       label:  "다운로드",
